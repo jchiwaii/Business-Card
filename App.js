@@ -31,19 +31,13 @@ export default function App() {
     {
       id: "linkedin",
       label: "LinkedIn",
-      icon: "linkedin-in",
+      icon: "linkedin",
       url: "https://www.linkedin.com",
-    },
-    {
-      id: "x",
-      label: "X / Twitter",
-      icon: "twitter",
-      url: "https://twitter.com",
     },
     {
       id: "email",
       label: "Email",
-      icon: "paper-plane",
+      icon: "envelope",
       url: "mailto:john.chiwai@example.com",
     },
   ];
@@ -86,7 +80,7 @@ export default function App() {
                   style={styles.socialChip}
                   onPress={() => Linking.openURL(item.url)}
                 >
-                  <FontAwesome5 name={item.icon} size={14} color="#38bdf8" />
+                  <FontAwesome5 name={item.icon} size={14} color="#6b7280" />
                   <Text style={styles.socialLabel}>{item.label}</Text>
                 </TouchableOpacity>
               ))}
@@ -107,6 +101,14 @@ export default function App() {
               </TouchableOpacity>
             </View>
           </View>
+
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Available for projects</Text>
+            <View style={styles.footerDivider} />
+            <Text style={styles.footerSubtext}>
+              Open to collaborations · Remote worldwide
+            </Text>
+          </View>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -116,18 +118,17 @@ export default function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#0b1220",
+    backgroundColor: "#ffffff",
   },
   scrollContent: {
-    paddingTop: 24,
-    paddingBottom: 56,
-    paddingHorizontal: 24,
+    padding: 20,
+    paddingBottom: 40,
   },
   banner: {
-    borderRadius: 28,
+    borderRadius: 16,
     overflow: "hidden",
-    height: 220,
-    marginBottom: 32,
+    height: 180,
+    marginBottom: 24,
   },
   bannerImage: {
     width: "100%",
@@ -135,119 +136,156 @@ const styles = StyleSheet.create({
   },
   bannerOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(7, 12, 24, 0.55)",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
   bannerContent: {
     ...StyleSheet.absoluteFillObject,
-    padding: 28,
+    padding: 20,
     justifyContent: "flex-end",
   },
   bannerTag: {
-    color: "#38bdf8",
-    fontSize: 13,
+    color: "#ffffff",
+    fontSize: 11,
     fontWeight: "600",
-    letterSpacing: 1.6,
+    letterSpacing: 1.2,
     textTransform: "uppercase",
+    opacity: 0.9,
   },
   bannerHeadline: {
-    color: "#f8fafc",
-    fontSize: 24,
-    fontWeight: "700",
-    marginTop: 12,
-    lineHeight: 30,
+    color: "#ffffff",
+    fontSize: 22,
+    fontWeight: "600",
+    marginTop: 6,
+    lineHeight: 28,
+    letterSpacing: -0.3,
   },
   profileCard: {
-    paddingHorizontal: 24,
-    paddingVertical: 32,
-    borderRadius: 28,
-    backgroundColor: "rgba(13, 19, 33, 0.9)",
+    padding: 24,
+    borderRadius: 16,
+    backgroundColor: "#ffffff",
     borderWidth: 1,
-    borderColor: "rgba(148, 163, 184, 0.15)",
-    shadowColor: "#0ea5e9",
-    shadowOpacity: 0.25,
-    shadowRadius: 18,
-    shadowOffset: { width: 0, height: 14 },
-    elevation: 10,
+    borderColor: "#e5e7eb",
+    shadowColor: "#000000",
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
     alignItems: "center",
-    marginBottom: 32,
   },
   avatar: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderWidth: 4,
-    borderColor: "rgba(148, 163, 184, 0.4)",
-    marginBottom: 20,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor: "#f3f4f6",
+    marginBottom: 16,
   },
   name: {
-    color: "#f8fafc",
-    fontSize: 26,
-    fontWeight: "700",
+    color: "#111827",
+    fontSize: 24,
+    fontWeight: "600",
+    letterSpacing: -0.5,
   },
   role: {
-    color: "#a5b4fc",
-    fontSize: 16,
-    marginTop: 6,
+    color: "#6b7280",
+    fontSize: 15,
+    marginTop: 4,
+    fontWeight: "400",
   },
   bio: {
-    color: "#cbd5f5",
+    color: "#4b5563",
     fontSize: 14,
-    lineHeight: 22,
+    lineHeight: 21,
     textAlign: "center",
     marginTop: 12,
-    maxWidth: 280,
+    maxWidth: 300,
+    fontWeight: "400",
   },
   socialRow: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
     marginTop: 20,
+    marginHorizontal: -4,
   },
   socialChip: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 999,
-    backgroundColor: "rgba(148, 163, 184, 0.12)",
-    margin: 6,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    borderRadius: 8,
+    backgroundColor: "#f9fafb",
+    borderWidth: 1,
+    borderColor: "#e5e7eb",
+    margin: 4,
   },
   socialLabel: {
-    color: "#e2e8f0",
+    color: "#374151",
     fontSize: 12,
     fontWeight: "600",
-    marginLeft: 8,
-    letterSpacing: 0.3,
+    marginLeft: 6,
   },
   buttonsRow: {
     flexDirection: "row",
-    marginTop: 24,
+    marginTop: 20,
+    width: "100%",
+    gap: 10,
   },
   primaryButton: {
-    backgroundColor: "#38bdf8",
+    flex: 1,
+    backgroundColor: "#3b82f6",
     paddingVertical: 12,
-    paddingHorizontal: 22,
-    borderRadius: 999,
-    marginRight: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    alignItems: "center",
   },
   primaryButtonText: {
-    color: "#0f172a",
+    color: "#ffffff",
     fontWeight: "700",
     fontSize: 14,
-    letterSpacing: 0.4,
   },
   secondaryButton: {
+    flex: 1,
     paddingVertical: 12,
-    paddingHorizontal: 22,
-    borderRadius: 999,
+    paddingHorizontal: 20,
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: "rgba(148, 163, 184, 0.35)",
-    backgroundColor: "rgba(148, 163, 184, 0.08)",
+    borderColor: "#d1d5db",
+    backgroundColor: "#ffffff",
+    alignItems: "center",
   },
   secondaryButtonText: {
-    color: "#e2e8f0",
+    color: "#374151",
     fontWeight: "600",
     fontSize: 14,
-    letterSpacing: 0.4,
+  },
+  footer: {
+    marginTop: 32,
+    paddingVertical: 24,
+    paddingHorizontal: 20,
+    borderRadius: 16,
+    backgroundColor: "#f9fafb",
+    borderWidth: 1,
+    borderColor: "#e5e7eb",
+    alignItems: "center",
+  },
+  footerText: {
+    color: "#111827",
+    fontSize: 16,
+    fontWeight: "600",
+    letterSpacing: -0.2,
+  },
+  footerDivider: {
+    width: 40,
+    height: 2,
+    backgroundColor: "#3b82f6",
+    borderRadius: 2,
+    marginVertical: 12,
+  },
+  footerSubtext: {
+    color: "#6b7280",
+    fontSize: 13,
+    fontWeight: "400",
+    textAlign: "center",
   },
 });
